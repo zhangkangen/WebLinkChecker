@@ -5,6 +5,7 @@ using System.IO;
 using System.Net.Mail;
 using System.Threading;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace WebLinkChecker
 {
@@ -598,6 +599,16 @@ namespace WebLinkChecker
                 notifyIcon1.Visible = true; //托盘图标可见
                 notifyIcon1.ShowBalloonTip(1000);
             }
+        }
+
+        /// <summary>
+        /// 读取配置文件中的配置
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        private string GetAppSetting(string key)
+        {
+            return ConfigurationManager.AppSettings[key] ?? string.Empty;
         }
     }
 }
