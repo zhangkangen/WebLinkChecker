@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 
 namespace WebLinkChecker
@@ -12,6 +13,8 @@ namespace WebLinkChecker
         [STAThread]
         static void Main()
         {
+            log4net.Config.XmlConfigurator.Configure(new FileInfo("~/log4net.config"));
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 

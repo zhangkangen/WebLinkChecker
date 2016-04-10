@@ -17,6 +17,8 @@ namespace WebLinkChecker
         private int cntLink;
         private int iLink = 0;
 
+        private static log4net.ILog _Logger = log4net.LogManager.GetLogger(typeof(WebLinkCheckerUI));
+
         public WebLinkCheckerUI()
         {
             InitializeComponent();
@@ -608,7 +610,7 @@ namespace WebLinkChecker
         /// <returns></returns>
         private string GetAppSetting(string key)
         {
-            return ConfigurationManager.AppSettings[key] ?? string.Empty;
+            return System.Configuration.ConfigurationSettings.AppSettings[key] ?? string.Empty;
         }
     }
 }
