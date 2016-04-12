@@ -13,7 +13,7 @@ namespace WebLinkChecker
         [STAThread]
         static void Main()
         {
-            log4net.Config.XmlConfigurator.Configure(new FileInfo("~/log4net.config"));
+            log4net.Config.XmlConfigurator.ConfigureAndWatch(new FileInfo("log4net.config"));
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
